@@ -1,27 +1,42 @@
-#ifndef ARRAY_HPP
-#define ARRAY_HPP
+#ifndef ARRAY_TPP
+#define ARRAY_TPP
 
-template <typename T> class Array
+template<typename T> Array<T>::Array()
 {
-	public:
-		Array();
-		Array(unsigned int n);
-		Array(const Array& other);
-		Array& operator=(const Array& other);
-		~Array();
+	this->array_ = new T[0];
+	this->size_ = 0;
+}
 
-		T operator[](unsigned int i);
+Array::Array(unsigned int n)
+{
+	this->array_ = new T[n];
+	this->size_ = n;
+}
 
-		class OutOfBounds: public std::exception
-		{
-			const char* what() const noexcept;
-		}
 
-		unsigned int size() const;
+Array::~Array()
+{
+	delete this->array_;
+}
 
-	private:
-		unsigned int size_;
+Array::Array(const Array& other)
+{
 
-};
+}
 
-#endif // ARRAY_HPP
+Array& Array::operator=(const Array& other)
+{
+
+}
+
+T& operator[](unsigned int i);
+
+class OutOfBounds: public std::exception
+{
+	const char* what() const noexcept;
+}
+
+unsigned int size() const;
+
+
+#endif // ARRAY_TPP
