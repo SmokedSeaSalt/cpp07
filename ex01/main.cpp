@@ -7,7 +7,7 @@ template <typename T> void increment(T& value)
     value++;
 }
 
-template <typename T> void printWithSpace(T& value)
+template <typename T> void printWithSpace(const T& value)
 {
     std::cout << " " << value;
 }
