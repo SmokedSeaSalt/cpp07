@@ -4,7 +4,7 @@
 
 NAME = array
 CPP = c++
-CPPFLAGS = -Wall -Werror -Wextra -MMD
+CPPFLAGS = -Wall -Werror -Wextra -MMD -g
 CCDEBUG = -g
 
 ################################################################################

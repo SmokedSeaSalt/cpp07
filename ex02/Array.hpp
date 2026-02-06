@@ -1,6 +1,9 @@
 #ifndef ARRAY_HPP
 #define ARRAY_HPP
 
+#include <exception>
+#include <string>
+
 template <typename T> class Array
 {
     public:
@@ -14,11 +17,16 @@ template <typename T> class Array
 
         class OutOfBounds : public std::exception
         {
+            public:
+                OutOfBounds(unsigned int i);
                 const char* what() const noexcept;
-        }
 
-        unsigned int
-        size() const;
+            private:
+                unsigned int index_;
+                std::string message_;
+        };
+
+        unsigned int size() const;
 
     private:
         T*           array_;
