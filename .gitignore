@@ -1,6 +1,7 @@
 .vscode
 test
 build*
+.clang-format
 
 #executable names
 templates
