@@ -32,12 +32,6 @@ int main(int, char**)
         }
     }
 
-    //check if [i] write works
-    for (int i = 0; i < MAX_VAL; i++)
-    {
-        numbers[i] = rand();
-    }
-
     //try out of bounds index
     try
     {
@@ -54,6 +48,12 @@ int main(int, char**)
     catch(const std::exception& e)
     {
         std::cerr << e.what() << '\n';
+    }
+
+    //check if [i] write works
+    for (int i = 0; i < MAX_VAL; i++)
+    {
+        numbers[i] = rand();
     }
 
     delete [] mirror;
